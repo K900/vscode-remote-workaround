@@ -11,7 +11,7 @@ in {
     package = lib.mkOption {
       type = lib.types.package;
       default = pkgs.nodejs_18-x;
-      defaultText = lib.literalExpression "pkgs.nodejs_18-x";
+      defaultText = lib.literalExpression "pkgs.nodejs-18_x";
       description = lib.mdDoc "The Node.js package to use. You generally shouldn't need to override this.";
     };
   };
