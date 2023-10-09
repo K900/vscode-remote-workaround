@@ -16,7 +16,7 @@ in {
     };
   };
 
-  config = lib.mkIf config.enable {
+  config = lib.mkIf cfg.enable {
     systemd.user = {
       paths.vscode-remote-workaround = {
         wantedBy = ["default.target"];
