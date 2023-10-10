@@ -10,13 +10,13 @@ in {
     enable = lib.mkEnableOption "automatic VSCode remote server patch";
     package = lib.mkOption {
       type = lib.types.package;
-      default = pkgs.nodejs_18-x;
-      defaultText = lib.literalExpression "pkgs.nodejs_18-x";
+      default = pkgs.nodejs-18_x;
+      defaultText = lib.literalExpression "pkgs.nodejs-18_x";
       description = lib.mdDoc "The Node.js package to use. You generally shouldn't need to override this.";
     };
   };
 
-  config = lib.mkIf config.enable {
+  config = lib.mkIf cfg.enable {
     systemd.user = {
       paths.vscode-remote-workaround = {
         wantedBy = ["default.target"];
